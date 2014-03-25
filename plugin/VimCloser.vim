@@ -2,7 +2,7 @@
 " is also open.
 let s:prevtabnum=tabpagenr('$')
 augroup TabClosed
-    autocmd! TabEnter * :if tabpagenr('$')<s:prevtabnum && tabpagenr()>1
+    autocmd! TabEnter * :if tabpagenr('$')<s:prevtabnum && tabpagenr()>1 && tabpagenr()<tabpagenr('$')
                 \       |   tabprevious
                 \       |endif
                 \       |let s:prevtabnum=tabpagenr('$')
